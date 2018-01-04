@@ -8,8 +8,7 @@ While most popular, public Docker images are communally vetted, in a security cr
 To do this
 
 1. Take any given public Docker image (note the specific tag) intended for use, e.g. `wordpress:4.9`.
-2. Navigate to the Docker Hub image page, in this case [https://hub.docker.com/_/wordpress/](https://hub.docker.com/_/wordpress/
-)
+2. Navigate to the Docker Hub image page, in this case [https://hub.docker.com/_/wordpress/](https://hub.docker.com/_/wordpress/)
 3. Look for the specific tag in the description.
 
 ## Docker Content Trust

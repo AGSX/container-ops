@@ -1,2 +1,6 @@
-# container-ops
-Container Ops: The Enterprise Guide on How to run Docker and Kubernetes in Production
+# Container Ops: Running Docker and Kubernetes in Production, for Enterprises
+
+
+
+
+

@@ -10,7 +10,13 @@ To do this
 1. Take any given public Docker image (note the specific tag) intended for use, e.g. `wordpress:4.9`.
 2. Navigate to the Docker Hub image page, in this case [https://hub.docker.com/_/wordpress/](https://hub.docker.com/_/wordpress/)
 3. Look for the specific tag in the description. There should a link to that image's Dockerfile. In this case, the original Dockerfile for `wordpress:4.9` can be found [here](https://github.com/docker-library/wordpress/blob/6a085d90853b8baffadbd3f0a41d6814a2513c11/php7.2/apache/Dockerfile)
-4. 
+
+We should now be able to inspect that Dockerfile and see exactly what commands were used to build that given image.
+
+More importantly, we now can do two things.:
+
+1. We can find the _base_ image that this image was built on. In this case, it's `FROM php:7.2-apache`. We can keep following the same steps above to inspect and audit the entire Docker image lineage: from [wordpress:4.9](https://github.com/docker-library/wordpress/blob/6a085d90853b8baffadbd3f0a41d6814a2513c11/php7.2/apache/Dockerfile) to 
+[php:7.2-apache](https://github.com/docker-library/php/blob/32313ea407379d70259e14414ec8aa0311c0a4c4/7.2/stretch/apache/Dockerfile) to [debian:stretch-slim](https://github.com/debuerreotype/docker-debian-artifacts/blob/6af0f6159c515601731d92972a245199337e3ca6/stretch/slim/Dockerfile).
 
 ## Docker Content Trust
 

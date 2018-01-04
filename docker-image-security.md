@@ -3,7 +3,7 @@ Docker Image Security
 
 ## Public Image Vetting
 
-
+While most popular, public Docker images are communally vetted, in the interest of enterprise security it would be best to internally inspect, audit and vet, then republish (see The Docker Registry)
 
 ## Docker Content Trust
 

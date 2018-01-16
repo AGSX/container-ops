@@ -22,9 +22,6 @@ kubectl label nodes node0 env=dev
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: nginx
-kind: Deployment
-metadata:
   name: nginx-deployment
   labels:
     app: nginx

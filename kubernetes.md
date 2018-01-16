@@ -20,7 +20,7 @@ kubectl label nodes node0 env=dev
 
 ```
 apiVersion: v1
-kind: Pod
+kind: Deployment
 metadata:
   name: nginx
 spec:

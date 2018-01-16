@@ -39,6 +39,6 @@ spec:
         image: nginx:1.7.9
         ports:
         - containerPort: 80
-      nodeSelector:
-        env: dev
+        nodeSelector:
+          env: dev
 ```

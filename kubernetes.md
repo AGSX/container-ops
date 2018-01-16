@@ -1,44 +1,22 @@
 Kubernetes
 ===
 
-## Node segregation
+## Network Policies
 
-To segregate workloads, e.g. "UAT" and "Dev" so they don't share physical nodes:
+By default, namespaces in Kubernetes do not have a network policy set, which means all pods in that namespace have unrestricted network access.
 
-1. Label the nodes
-
-```
-# First list all your nodes
-kubectl get nodes
-
-# Next, label a particular node:
-# kubectl label nodes <node-name> <label-key>=<label-value>
-kubectl label nodes node0 env=dev
-```
-
-2. Use `nodeSelector` in your deployments
+As a best practice, whenever a new namespace is created in Kubernetes, you should immediately create a default, “deny all” network policy.
 
 ```
-apiVersion: apps/v1beta2
-kind: Deployment
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
 metadata:
-  name: nginx-deployment
-  labels:
-    app: nginx
+  name: default-deny
 spec:
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.7.9
-        ports:
-        - containerPort: 80
-      nodeSelector:
-        env: dev
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
 ```
+
+Note that this means that pods that would normally be able to communicate with each other, or with other Kubernetes services, or fetch data from the Internet will not be able to do so until another network policy that specifically allows such traffic is created.

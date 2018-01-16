@@ -6,4 +6,5 @@
 * [Docker Resource Limits](docker-resource-limits.md)
 * [Docker Image Security](docker-image-security.md)
 * [Kubernetes](kubernetes.md)
+* [Node Segregation](node-segregation.md)
 
